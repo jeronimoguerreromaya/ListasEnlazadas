@@ -15,7 +15,7 @@ public class Ejericico1 {
 		l.insertar("5");
 		l.insertar("6");
 		l.insertar("7");	
-		l.insertar("8");
+
 		int c = 1;
 
 		for (int i=1; i<l.getSize();i++) {
