@@ -15,7 +15,7 @@ public class ListaSimple <T extends Comparable<T>>  implements Iterable<T>{
 		this.head=null;
 		this.size=0;
 	}
-	
+
 	private class Node<T>{
 		T data;
 		Node<T> next;
@@ -26,6 +26,8 @@ public class ListaSimple <T extends Comparable<T>>  implements Iterable<T>{
 			next = null;
 		}
 	}
+
+
 	
 	public void insertar(T data) {
 		
@@ -93,7 +95,25 @@ public class ListaSimple <T extends Comparable<T>>  implements Iterable<T>{
 		}
 
 	}
-	
+	public ListaSimple<T> concatenarListas(ListaSimple<T> lista1, ListaSimple<T> lista2) {
+		ListaSimple<T> listaConcatenada = new ListaSimple<>();
+
+		// Agregar elementos de la primera lista
+		Node<T> actual = lista1.head;
+		while (actual != null) {
+			listaConcatenada.insertarFinal(actual.data);
+			actual = actual.next;
+		}
+
+		// Agregar elementos de la segunda lista
+		actual = lista2.head;
+		while (actual != null) {
+			listaConcatenada.insertarFinal(actual.data);
+			actual = actual.next;
+		}
+
+		return listaConcatenada;
+	}
 	public T get(int index) {
 		
 		if (head == null) {
@@ -101,9 +121,9 @@ public class ListaSimple <T extends Comparable<T>>  implements Iterable<T>{
         }
 
         Node<T> current = head;
-        for(int i=0; i<size;i++ ) {
+        for(int i=1; i<=size;i++ ) {
         	
-        	if(i == index-1) {
+        	if(i == index) {
         		return current.data;
         	}
         	current = current.next;
@@ -129,6 +149,24 @@ public class ListaSimple <T extends Comparable<T>>  implements Iterable<T>{
              
          
          size--;	}
+
+	public float obtenerMedia (){
+		float media = 0;
+
+		Node<T> actual = head;
+
+
+		while(actual!=null){
+			 media += Float.parseFloat(actual.data.toString());
+
+			actual = actual.next;
+		}
+		media = (float)(media/size);
+
+		return media;
+
+	}
+
 
 	public Node<T> getHead() {
 		return head;
