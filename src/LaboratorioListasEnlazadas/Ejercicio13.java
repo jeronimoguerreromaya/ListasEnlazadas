@@ -9,7 +9,7 @@ public class Ejercicio13 {
         lista.agregarNodo(0, 4);
         lista.agregarNodo(0, 6);
         lista.agregarNodo(0, 8);
-        lista.agregarNodo(0, 5);
+        lista.agregarNodo(0, 4);
         lista.agregarNodo(0, 5);
         lista.agregarNodo(0, 4);
         lista.agregarNodo(0, 4);
